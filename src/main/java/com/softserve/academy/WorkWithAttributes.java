@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class WorkWithAttributes {
+
     //the method checks that the user has entered three commas
     public static boolean isForCommas(String input) {
         Pattern pattern = Pattern.compile(",");
@@ -14,6 +15,7 @@ public class WorkWithAttributes {
         }
         return count == 3;
     }
+
     // split string and write to array, trim spaces
     public static String[] parseInput(String input) {
         String[] inputArr = input.split(",");

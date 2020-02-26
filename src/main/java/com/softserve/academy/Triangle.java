@@ -3,6 +3,7 @@ package com.softserve.academy;
 import java.text.DecimalFormat;
 
 public class Triangle {
+
     private String name;
     private double side1;
     private double side2;

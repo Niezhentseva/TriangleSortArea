@@ -39,27 +39,27 @@ public class TriangleTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testTriangleBuilder1() {
-        Triangle actual = Triangle.createTriangle("one", 0, 0, 0);
+        triangle = Triangle.createTriangle("one", 0, 0, 0);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testTriangleBuilder2() {
-        Triangle actual = Triangle.createTriangle("two", -1, -1, -1.5);
+        triangle = Triangle.createTriangle("two", -1, -1, -1.5);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testTriangleBuilder3() {
-        Triangle actual = Triangle.createTriangle("three", 1, -1, 2);
+        triangle = Triangle.createTriangle("three", 1, -1, 2);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testTriangleBuilder4() {
-        Triangle actual = Triangle.createTriangle("four", 3, 1, 1);
+        triangle = Triangle.createTriangle("four", 3, 1, 1);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void testTriangleBuilder5() {
-        Triangle actual = Triangle.createTriangle("five", 15, 2, 1);
+        triangle = Triangle.createTriangle("five", 15, 2, 1);
     }
 
 }

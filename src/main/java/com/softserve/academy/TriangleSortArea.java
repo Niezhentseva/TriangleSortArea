@@ -29,6 +29,7 @@ public class TriangleSortArea {
             }
             ConsoleIO.printToConsole(InformMessage.CONTINUE_PROGRAM);
         } while (ConsoleIO.isContinue());
+
         triangles.sort(Comparator.comparing(Triangle::getArea).reversed());
         ConsoleIO.printListTriangles(triangles);
     }

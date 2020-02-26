@@ -43,7 +43,6 @@ public class WorkWithAttributesTest {
                 {"ten, /, =, ?", new String[]{"ten", "/", "=", "?"}}
         };
     }
-
     @Test
     @UseDataProvider("checkQuantityAttributes")
     public void isForCommasTest(String input, boolean expected) {
@@ -51,7 +50,6 @@ public class WorkWithAttributesTest {
 
         assertEquals(expected, actual);
     }
-
     @Test
     @UseDataProvider("checkParseAttributes")
     public void parseInputTest(String input, String[] expected) {

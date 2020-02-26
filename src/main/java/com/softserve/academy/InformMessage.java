@@ -1,6 +1,7 @@
 package com.softserve.academy;
 
 public interface InformMessage {
+
     String START_PROGRAM = "Enter attributes of triangle: " +
             "<name>, <side1>, <side2>, <side3>: ";
     String CONTINUE_PROGRAM = "Do you want to add another triangle? (y/yes or n/no)";
