@@ -61,5 +61,4 @@ public class TriangleTest {
     public void testTriangleBuilder5() {
         triangle = Triangle.createTriangle("five", 15, 2, 1);
     }
-
 }

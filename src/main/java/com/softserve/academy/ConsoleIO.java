@@ -1,6 +1,5 @@
 package com.softserve.academy;
 
-import java.text.DecimalFormat;
 import java.util.List;
 import java.util.Scanner;
 
