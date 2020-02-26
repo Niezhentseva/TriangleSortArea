@@ -20,6 +20,10 @@ public class ConsoleIO {
         System.out.println(message);
     }
 
+    public static void closeScanner() {
+        scanner.close();
+    }
+
     public static void printListTriangles(List<Triangle> triangles) {
         System.out.println("============= Triangles list: =============");
         int i = 1;

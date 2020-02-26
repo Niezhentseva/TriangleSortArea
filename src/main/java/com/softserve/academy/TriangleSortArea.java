@@ -23,35 +23,38 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+import static com.softserve.academy.InformMessage.*;
+
 public class TriangleSortArea {
     public static void main(String[] args) {
         List<Triangle> triangles = new ArrayList<>(); // create a list
         do {
-            ConsoleIO.printToConsole(InformMessage.START_PROGRAM);
+            ConsoleIO.printToConsole(START_PROGRAM);
             String input = ConsoleIO.enterValue();
             if (!(WorkWithAttributes.isForCommas(input))) { //checking the number of commas
-                ConsoleIO.printToConsole(InformMessage.INFORM_NO_THREE_SIDES);
+                ConsoleIO.printToConsole(INFORM_NO_THREE_SIDES);
             } else {
                 String[] arrInput = WorkWithAttributes.parseInput(input); // split string
+                Triangle triangle = null;
                 try {
-                    triangles.add(
-                            Triangle.createTriangle(
+                    triangle = Triangle.createTriangle(
                                     arrInput[0],
                                     Double.parseDouble(arrInput[1]),
                                     Double.parseDouble(arrInput[2]),
-                                    Double.parseDouble(arrInput[3])));
+                                    Double.parseDouble(arrInput[3]));
                 } catch (NumberFormatException e) {
-                    ConsoleIO.printToConsole(InformMessage.INFORM_NO_NUMBER);
+                    ConsoleIO.printToConsole(INFORM_NO_NUMBER);
                 } catch (IllegalArgumentException e) {
-                    ConsoleIO.printToConsole(InformMessage.INFORM_NO_TRIANGLE);
-                } catch (ArrayIndexOutOfBoundsException e){
-                    ConsoleIO.printToConsole(InformMessage.INFORM_NO_THREE_SIDES);
+                    ConsoleIO.printToConsole(INFORM_NO_TRIANGLE);
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    ConsoleIO.printToConsole(INFORM_NO_THREE_SIDES);
                 }
+                triangles.add(triangle);
             }
-            ConsoleIO.printToConsole(InformMessage.CONTINUE_PROGRAM);
+            ConsoleIO.printToConsole(CONTINUE_PROGRAM);
         } while (ConsoleIO.isContinue());
-
         triangles.sort(Comparator.comparing(Triangle::getArea).thenComparing(Triangle::getName).reversed());
         ConsoleIO.printListTriangles(triangles);
+        ConsoleIO.closeScanner();
     }
 }
