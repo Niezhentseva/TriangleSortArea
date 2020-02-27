@@ -52,6 +52,7 @@ public class TriangleSortArea {
             }
             ConsoleIO.printToConsole(CONTINUE_PROGRAM);
         } while (ConsoleIO.isContinue());
+
         triangles.sort(Comparator.comparing(Triangle::getArea).thenComparing(Triangle::getName).reversed());
         ConsoleIO.printListTriangles(triangles);
         ConsoleIO.closeScanner();
