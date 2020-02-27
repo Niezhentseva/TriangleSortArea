@@ -23,9 +23,10 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-import static com.softserve.academy.InformMessage.*;
+import static com.softserve.academy.ConsoleIO.*;
 
 public class TriangleSortArea {
+
     public static void main(String[] args) {
         List<Triangle> triangles = new ArrayList<>(); // create a list
         do {
@@ -35,13 +36,12 @@ public class TriangleSortArea {
                 ConsoleIO.printToConsole(INFORM_NO_THREE_SIDES);
             } else {
                 String[] arrInput = WorkWithAttributes.parseInput(input); // split string
-                Triangle triangle = null;
                 try {
-                    triangle = Triangle.createTriangle(
-                                    arrInput[0],
-                                    Double.parseDouble(arrInput[1]),
-                                    Double.parseDouble(arrInput[2]),
-                                    Double.parseDouble(arrInput[3]));
+                    triangles.add(Triangle.createTriangle(
+                            arrInput[0],
+                            Double.parseDouble(arrInput[1]),
+                            Double.parseDouble(arrInput[2]),
+                            Double.parseDouble(arrInput[3])));
                 } catch (NumberFormatException e) {
                     ConsoleIO.printToConsole(INFORM_NO_NUMBER);
                 } catch (IllegalArgumentException e) {
@@ -49,7 +49,6 @@ public class TriangleSortArea {
                 } catch (ArrayIndexOutOfBoundsException e) {
                     ConsoleIO.printToConsole(INFORM_NO_THREE_SIDES);
                 }
-                triangles.add(triangle);
             }
             ConsoleIO.printToConsole(CONTINUE_PROGRAM);
         } while (ConsoleIO.isContinue());
